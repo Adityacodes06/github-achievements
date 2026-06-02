@@ -18,27 +18,14 @@ export default function Hero({ user, totalStars, totalForks, unlockedCount, tota
 
   return (
     <section style={{ padding: '4rem 0 2rem', textAlign: 'center', position: 'relative' }}>
-      {/* Scan line */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '1px',
-        background: 'linear-gradient(90deg, transparent, var(--accent-cyan), transparent)',
-        animation: 'shimmer 3s linear infinite',
-        backgroundSize: '200% 100%',
-      }} />
-
       {/* Avatar */}
-      <div style={{ position: 'relative', display: 'inline-block', marginBottom: '1.5rem' }}
-           className="animate-float">
+      <div style={{ position: 'relative', display: 'inline-block', marginBottom: '1.5rem' }}>
         <div style={{
-          width: 120,
-          height: 120,
+          width: 100,
+          height: 100,
           borderRadius: '50%',
-          border: '2px solid var(--accent-cyan)',
-          boxShadow: '0 0 40px rgba(0,245,255,0.3), inset 0 0 40px rgba(0,245,255,0.05)',
+          border: '3px solid var(--accent-blue)',
+          boxShadow: '0 4px 20px rgba(59, 130, 246, 0.15)',
           overflow: 'hidden',
           margin: '0 auto',
           position: 'relative',
@@ -46,63 +33,38 @@ export default function Hero({ user, totalStars, totalForks, unlockedCount, tota
           <Image
             src={user.avatar_url}
             alt={user.name}
-            width={120}
-            height={120}
+            width={100}
+            height={100}
             style={{ objectFit: 'cover' }}
           />
         </div>
-        {/* Orbit ring */}
-        <div style={{
-          position: 'absolute',
-          inset: -10,
-          border: '1px dashed rgba(0,245,255,0.2)',
-          borderRadius: '50%',
-          animation: 'orbit 8s linear infinite',
-        }} />
-        <div style={{
-          position: 'absolute',
-          top: -10,
-          left: '50%',
-          width: 8,
-          height: 8,
-          background: 'var(--accent-cyan)',
-          borderRadius: '50%',
-          transform: 'translateX(-50%)',
-          boxShadow: '0 0 10px var(--accent-cyan)',
-        }} />
       </div>
 
       {/* Name */}
       <h1 style={{
         fontFamily: 'Syne, sans-serif',
-        fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-        fontWeight: 800,
-        letterSpacing: '-0.02em',
-        background: 'linear-gradient(135deg, var(--text-primary) 30%, var(--accent-cyan) 100%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
+        fontSize: 'clamp(1.8rem, 5vw, 3rem)',
+        fontWeight: 700,
+        letterSpacing: '-0.01em',
+        color: 'var(--text-primary)',
         marginBottom: '0.5rem',
       }}>
         {user.name || user.login}
       </h1>
 
       <p style={{
-        color: 'var(--accent-cyan)',
-        fontFamily: 'DM Mono, monospace',
-        fontSize: '0.85rem',
-        letterSpacing: '0.15em',
-        marginBottom: '1rem',
-        opacity: 0.8,
+        color: 'var(--text-muted)',
+        fontSize: '0.95rem',
+        marginBottom: '1.5rem',
       }}>
-        @{user.login} · {accountAge}yr on GitHub
+        @{user.login} · {accountAge} years on GitHub
       </p>
 
       {user.bio && (
         <p style={{
           maxWidth: 500,
           margin: '0 auto 2rem',
-          color: 'rgba(200,210,255,0.65)',
+          color: 'var(--text-muted)',
           fontSize: '0.9rem',
           lineHeight: 1.7,
         }}>
@@ -119,11 +81,10 @@ export default function Hero({ user, totalStars, totalForks, unlockedCount, tota
         marginBottom: '2rem',
       }}>
         {[
-          { label: 'Repos', value: user.public_repos, color: 'var(--accent-cyan)' },
-          { label: 'Stars', value: totalStars, color: 'var(--accent-amber)' },
-          { label: 'Forks', value: totalForks, color: 'var(--accent-violet)' },
-          { label: 'Followers', value: user.followers, color: 'var(--accent-rose)' },
-          { label: 'Achievements', value: `${unlockedCount}/${totalAchievements}`, color: '#34d399' },
+          { label: 'Repos', value: user.public_repos, color: 'var(--accent-blue)' },
+          { label: 'Stars', value: totalStars, color: 'var(--accent-indigo)' },
+          { label: 'Forks', value: totalForks, color: 'var(--accent-blue)' },
+          { label: 'Followers', value: user.followers, color: 'var(--accent-indigo)' },
         ].map((stat) => (
           <div key={stat.label} className="glass" style={{
             padding: '0.75rem 1.25rem',
@@ -159,21 +120,21 @@ export default function Hero({ user, totalStars, totalForks, unlockedCount, tota
           rel="noopener noreferrer"
           style={{
             padding: '0.6rem 1.5rem',
-            border: '1px solid var(--accent-cyan)',
-            color: 'var(--accent-cyan)',
+            border: '1px solid var(--accent-blue)',
+            color: 'var(--accent-blue)',
             borderRadius: 8,
             fontSize: '0.8rem',
             textDecoration: 'none',
             letterSpacing: '0.1em',
-            background: 'rgba(0,245,255,0.05)',
+            background: 'rgba(59, 130, 246, 0.08)',
             transition: 'all 0.2s',
-            fontFamily: 'DM Mono, monospace',
+            fontFamily: 'Inter, sans-serif',
           }}
           onMouseEnter={(e) => {
-            (e.target as HTMLElement).style.background = 'rgba(0,245,255,0.15)';
+            (e.target as HTMLElement).style.background = 'rgba(59, 130, 246, 0.15)';
           }}
           onMouseLeave={(e) => {
-            (e.target as HTMLElement).style.background = 'rgba(0,245,255,0.05)';
+            (e.target as HTMLElement).style.background = 'rgba(59, 130, 246, 0.08)';
           }}
         >
           ↗ GitHub Profile
@@ -185,7 +146,7 @@ export default function Hero({ user, totalStars, totalForks, unlockedCount, tota
             rel="noopener noreferrer"
             style={{
               padding: '0.6rem 1.5rem',
-              border: '1px solid rgba(255,255,255,0.1)',
+              border: '1px solid rgba(0, 0, 0, 0.08)',
               color: 'var(--text-muted)',
               borderRadius: 8,
               fontSize: '0.8rem',

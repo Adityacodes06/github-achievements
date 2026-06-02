@@ -15,8 +15,9 @@ export default async function Home() {
   } catch {
     return (
       <main style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
-        <div className="glass" style={{ padding: '2rem', textAlign: 'center' }}>
-          <p style={{ color: 'var(--accent-rose)' }}>Failed to load GitHub data. Check your connection.</p>
+        <div className="glass" style={{ padding: '2rem', textAlign: 'center', maxWidth: 500 }}>
+          <p style={{ color: '#ef4444', fontWeight: 600 }}>Failed to load GitHub data</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.5rem' }}>Please check your GitHub token and internet connection</p>
         </div>
       </main>
     );

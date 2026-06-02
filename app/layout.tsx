@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'AdityaCodes06 — GitHub Achievements',
-  description: 'Interactive GitHub achievements showcase for AdityaCodes06',
+  title: 'GitHub Profile',
+  description: 'GitHub profile and repositories showcase',
   openGraph: {
-    title: 'AdityaCodes06 — GitHub Achievements',
-    description: 'Full-stack engineer, quantum researcher, AI/ML builder.',
+    title: 'GitHub Profile',
+    description: 'View repositories, languages, and recent activity',
     type: 'website',
   },
 };

@@ -7,14 +7,14 @@ interface ActivityProps {
 }
 
 const eventConfig: Record<string, { label: string; icon: string; color: string }> = {
-  PushEvent: { label: 'Pushed to', icon: '↑', color: 'var(--accent-cyan)' },
-  CreateEvent: { label: 'Created', icon: '+', color: '#34d399' },
-  PullRequestEvent: { label: 'Pull Request', icon: '⟲', color: 'var(--accent-violet)' },
-  IssuesEvent: { label: 'Issue', icon: '!', color: 'var(--accent-rose)' },
-  WatchEvent: { label: 'Starred', icon: '★', color: 'var(--accent-amber)' },
-  ForkEvent: { label: 'Forked', icon: '⑂', color: '#60a5fa' },
-  DeleteEvent: { label: 'Deleted', icon: '×', color: 'var(--accent-rose)' },
-  ReleaseEvent: { label: 'Released', icon: '⬆', color: '#34d399' },
+  PushEvent: { label: 'Pushed to', icon: '↑', color: 'var(--accent-blue)' },
+  CreateEvent: { label: 'Created', icon: '+', color: 'var(--accent-green)' },
+  PullRequestEvent: { label: 'Pull Request', icon: '⟲', color: 'var(--accent-indigo)' },
+  IssuesEvent: { label: 'Issue', icon: '!', color: '#ef4444' },
+  WatchEvent: { label: 'Starred', icon: '★', color: '#f59e0b' },
+  ForkEvent: { label: 'Forked', icon: '⑂', color: 'var(--accent-blue)' },
+  DeleteEvent: { label: 'Deleted', icon: '×', color: '#ef4444' },
+  ReleaseEvent: { label: 'Released', icon: '⬆', color: 'var(--accent-green)' },
 };
 
 function timeAgo(dateStr: string): string {
@@ -34,15 +34,15 @@ export default function Activity({ events }: ActivityProps) {
 
   return (
     <section className="glass" style={{ padding: '1.5rem', marginBottom: '1.5rem' }}>
-      <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>
+      <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '-0.01em', color: 'var(--text-primary)' }}>
         Recent Activity
         <span style={{
           display: 'inline-block',
           width: 6,
           height: 6,
           borderRadius: '50%',
-          background: '#34d399',
-          boxShadow: '0 0 6px #34d399',
+          background: 'var(--accent-green)',
+          boxShadow: '0 0 6px var(--accent-green)',
           marginLeft: 8,
           verticalAlign: 'middle',
         }} className="animate-pulse-glow" />
@@ -62,16 +62,16 @@ export default function Activity({ events }: ActivityProps) {
                 gap: '0.75rem',
                 padding: '0.5rem 0.75rem',
                 borderRadius: 8,
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.04)',
+                background: 'rgba(0, 0, 0, 0.02)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
                 transition: 'all 0.2s',
                 animationDelay: `${i * 0.04}s`,
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.04)';
+                (e.currentTarget as HTMLElement).style.background = 'rgba(0, 0, 0, 0.04)';
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.02)';
+                (e.currentTarget as HTMLElement).style.background = 'rgba(0, 0, 0, 0.02)';
               }}
             >
               <div style={{
